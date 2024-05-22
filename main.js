@@ -1,4 +1,5 @@
 const fs = require("fs").promises;
+const { validateCommandLineArgs } = require("./validateCommandLineArgs");
 
 async function main() {
     const args = process.argv.slice(2);
