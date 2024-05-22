@@ -1,6 +1,4 @@
 const fs = require("fs").promises;
-const { validateMarkdownPath } = require("./validateMarkdownPath");
-const { parserHTML } = require("./parserHTML");
 const { validateCommandLineArgs } = require("./validateCommandLineArgs");
 
 async function main() {
