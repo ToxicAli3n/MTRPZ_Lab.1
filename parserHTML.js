@@ -1,5 +1,5 @@
 const { invalidPatterns } = require('./invalidPatterns');
-const { formattingPatterns } = require('./formattingPatterns');
+const { formattingPatterns } = require('./regexPatterns');
 
 function detectMistakes(markdown) {
     return invalidPatterns.filter(({ pattern }) => pattern.test(markdown));
@@ -15,7 +15,7 @@ function extractCodeBlocks(markdown) {
 }
 
 function splitParagraphs(markdown) {
-    const paragraphs = markdown.split(/([a-zA-Z0-9]*)^$/gm).filter(Boolean);
+    const paragraphs = markdown.split(/([a-zA-Z0-9]*)^\s*$/gm).filter(Boolean);
     return paragraphs.map(paragraph => `<p>${paragraph.trim()}</p>`).join("\n");
 }
 
